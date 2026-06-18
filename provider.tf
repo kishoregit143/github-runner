@@ -6,8 +6,8 @@ terraform {
     }
   }
 backend "s3" {
-    bucket = "devopslab-remote-state"
-    key    = "ec2-githubrunner"
+    bucket = "86s-remote"
+    key    = "GithubRunner"
     region = "us-east-1"
     use_lockfile = true
     encrypt = true
