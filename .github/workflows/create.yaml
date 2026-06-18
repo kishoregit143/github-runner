@@ -10,21 +10,21 @@ jobs:
       - name: list files
         run: ls -l
       # installs latest terraform in the runner
-      # - name: setup terraform
-      #   uses: hashicorp/setup-terraform@v3
+      - name: setup terraform
+        uses: hashicorp/setup-terraform@v3
 
       # - name: Configure AWS Credentials
-      #   uses: aws-actions/configure-aws-credentials@v5.1.1
-      #   with:
-      #     aws-region: us-east-1
-      #     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        uses: aws-actions/configure-aws-credentials@v5.1.1
+        with:
+          aws-region: us-east-1
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
-      # - name: terraform init
-      #   run: terraform init
+      - name: terraform init
+        run: terraform init
 
-      # - name: terraform plan
-      #   run: terraform plan
+      - name: terraform plan
+        run: terraform plan
 
-      # - name: terraform apply
-      #   run: terraform apply -auto-approve
+      - name: terraform apply
+        run: terraform apply -auto-approve
